@@ -1,0 +1,24 @@
+// Font Family
+$font_body: "Montserrat", sans-serif;
+$font_heading:"Raleway", sans-serif;
+
+// Default Color 
+$color_white: #FFFFFF;
+$color_black:#131315;
+$color_body: #3a3d40;
+$color_primary: #a80024;
+$color_secondary:#132132;
+$color_light: #F1F1FC;
+$color_border: rgba(15, 14, 14, 0.1);   
+
+// Shadow
+$shadow: 0 0 60px 0 rgba(15, 14, 14, 0.12);
+
+// Border Radius
+$radius_primary: 12px;
+$radius_secondary: 50px;
+
+// Transition Effects 
+$transition_fast: 0.3s cubic-bezier(0.5, 1, 0.89, 1);
+$transition_slow: 0.6s cubic-bezier(0.5, 1, 0.89, 1);
+

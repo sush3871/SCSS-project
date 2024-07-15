@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+
+<style>
+  * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+.grid {
+  background: #EEE;
+  max-width: 930px;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 300px;
+  height: 300px;
+  float: left;
+  background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+  margin:5px;
+}
+
+.grid-item--height2 { height: 250px; background-color:lightblue;}
+.grid-item--height3 { height: 350px; background-color:violet;}
+
+.grid-item:hover {
+  background: #A2C;
+  border-color: white;
+  cursor: pointer;
+}
+
+
+</style>
+</head>
+
+<body>
+
+  <h1>Masonry Example</h1>
+<p>click a card to see how the grid changes and adjusts if a card doesn't display</p>
+<div class="grid">
+  <div class="grid-item grid-item--height3">CARD 1</div>
+  <div class="grid-item">CARD 2</div>
+  <div class="grid-item grid-item--height2">CARD 3</div>
+  <div class="grid-item grid-item--height3">CARD 4</div>
+  <div class="grid-item grid-item--height3">CARD 5</div>
+  <div class="grid-item">CARD 6</div>
+  <div class="grid-item grid-item--height2">CARD 7</div>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://masonry.desandro.com/masonry.pkgd.js"></script>
+<script>
+  // external js: masonry.pkgd.js
+
+$(document).ready( function() {
+  
+  var $grid = $('.grid').masonry({
+    columnWidth: 310,
+    itemSelector: '.grid-item'
+  });
+});
+
+</script>
+</body>
+
+</html>

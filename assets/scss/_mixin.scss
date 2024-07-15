@@ -1,0 +1,128 @@
+// Background Image Mixin
+@mixin bg_img($bg_repeat:no-repeat, $bg_size:cover, $bg_position:center center){
+    background-size: $bg_size;
+    background-position: $bg_position;
+    background-repeat: $bg_repeat;
+}
+
+// After Before
+@mixin after_before{
+    content: '';
+    position: absolute;
+}
+
+// animate
+@mixin animate($animation, $duration, $repeat, $easing) {
+    -webkit-animation: $animation $duration $repeat $easing;
+       -moz-animation: $animation $duration $repeat $easing;
+        -ms-animation: $animation $duration $repeat $easing;
+        -o-animation: $animation $duration $repeat $easing;
+            animation: $animation $duration $repeat $easing;
+}
+
+//backgroud
+@mixin background {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+// transition specific
+@mixin tp-transition($property: all, $time: .3s,  $func : ease-out, $delay : 0s) {
+    -webkit-transition: $property $time $delay $func;
+    -moz-transition: $property $time $delay $func;
+    -ms-transition: $property $time $delay $func;
+    -o-transition: $property $time $delay $func;
+    transition: $property $time $delay $func;
+}
+
+// transition multiple
+@mixin tp-transition-mul($property) {
+    -webkit-transition: $property;
+    -moz-transition: $property;
+    -ms-transition: $property;
+    -o-transition: $property;
+    transition: $property ;
+}
+      
+//transition 
+@mixin transition($time) {
+    -webkit-transition: all $time ease-out 0s;
+    -moz-transition: all $time ease-out 0s;
+    -ms-transition: all $time ease-out 0s;
+    -o-transition: all $time ease-out 0s;
+    transition: all $time ease-out 0s;
+}
+
+//border radius
+@mixin border-radius($man) {
+    -webkit-border-radius: $man;
+    -moz-border-radius: $man;
+    -o-border-radius: $man;
+    -ms-border-radius: $man;
+    border-radius: $man;
+}
+
+// sentence case
+@mixin sentence-case() {
+    text-transform: lowercase;
+    &:first-letter {
+        text-transform: uppercase;
+    }
+}
+
+// Box shadows
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;       
+    -ms-box-shadow: $shadow;       
+    -o-box-shadow: $shadow;       
+        box-shadow: $shadow;
+}
+
+@mixin social_icons{
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    display: block;
+    border-radius:$radius_secondary;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $color_primary;
+    z-index: 1;
+}
+
+@mixin box_shadow{
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+@mixin inline_underline{
+    display: inline;
+    padding-bottom: 0;
+    -webkit-transition: background-size 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: background-size 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(currentColor), color-stop(98%, currentColor));
+    background-image: linear-gradient(to bottom, currentColor 0%, currentColor 98%);
+    background-size: 0 1px;
+    background-repeat: no-repeat;
+    background-position: left 100%;
+    overflow: visible !important;
+    position: relative;
+}
+@mixin inline_underline_hover{
+    text-decoration: none;
+    background-size: 100% 1px;
+}
+@mixin widget_background{
+    background-color: $color_white !important;
+    padding: 30px;
+    border-radius: 20px !important;
+    margin-bottom: 50px;
+    @include box_shadow();
+    -webkit-transition: $transition_slow;
+    transition: $transition_slow;
+}
